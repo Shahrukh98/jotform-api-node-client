@@ -12,9 +12,12 @@
   "license": "ISC",
   "devDependencies": {
     "eslint": "^7.31.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "jest": "^27.0.6"
   },
   "dependencies": {
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "qs": "^6.10.1",
+    "query-string": "^7.0.1"
   }
 }
