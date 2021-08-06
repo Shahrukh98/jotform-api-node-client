@@ -9,8 +9,9 @@ describe('Client test', () => {
     expect(client.key).toBe(API_KEY);
   });
   it('should throw error when key is not defined', () => {
-    expect(() => {
+    const test = () => {
       const client = new Client();
-    }).toThrow('You need an api key to use client');
+    };
+    expect(test).toThrow('You need an api key to use client');
   });
 });

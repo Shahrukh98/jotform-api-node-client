@@ -15,4 +15,12 @@ describe('Submission endpoint', () => {
     const {form_id} = content;
     expect(form_id).toBe('212065437293051');
   });
+  // FIXME: due to an unknown reason it is failing again and again
+  it('should post submission without error', async () => {
+    const result = await Submission.postSubmission(client, submissionID);
+    const response = await result.json();
+    const {message} = response;
+    expect(message).toBe('success');
+  });
+  // TODO: add a test for deleteSubmission
 });

@@ -40,12 +40,19 @@ describe('User endpoint', () => {
     const {message} = response;
     expect(message).toBe('success');
   });
-  //   it('should get history without error', async () => {
-  //     const result = await User.getHistory(client);
-  //     const response = await result.json();
-  //     const {message} = response;
-  //     expect(message).toBe('success');
-  //   });
+  it('should get reports without error', async () => {
+    const result = await User.getReports(client);
+    const response = await result.json();
+    const {message} = response;
+    expect(message).toBe('success');
+  });
+  // FIXME: getHistory methods takes to much time
+  // it('should get history without error', async () => {
+  //   const result = await User.getHistory(client);
+  //   const response = await result.json();
+  //   const {message} = response;
+  //   expect(message).toBe('success');
+  // });
   it('should get settings without error', async () => {
     const result = await User.getSettings(client);
     const response = await result.json();
@@ -61,5 +68,68 @@ describe('User endpoint', () => {
     const {content} = response;
     const {website} = content;
     expect(website).toBe(settings.website);
+  });
+  it('should get forms without error', async () => {
+    const result = await User.getForms(client);
+    const response = await result.json();
+    const {message} = response;
+    expect(message).toBe('success');
+  });
+  it('should post form without error', async () => {
+    const form = {
+      questions: [
+        {
+          type: 'control_head',
+          text: 'this is a test',
+          order: 1,
+          name: 'test',
+        },
+      ],
+      properties: {
+        title: 'this is a test form',
+      },
+    };
+    const result = await User.postForm(client, form);
+    const response = await result.json();
+    const {message} = response;
+    expect(message).toBe('success');
+  });
+  it('should throw error when required fields not provided for postForm', async () => {
+    const form = {
+      questions: [
+        {
+          type: 'control_head',
+          text: 'this is a test',
+          order: 1,
+          name: 'test',
+        },
+      ],
+      properties: {
+
+      },
+    };
+    const test = () => {
+      User.postForm(client, form);
+    };
+    expect(test).toThrow('You need to provide required fields to create a form');
+  });
+  it('should put form without error', async () => {
+    const form = {
+      questions: [
+        {
+          type: 'control_head',
+          text: 'this is a test',
+          order: 1,
+          name: 'test',
+        },
+      ],
+      properties: {
+        title: 'this is a test form',
+      },
+    };
+    const result = await User.putForm(client, form);
+    const response = await result.json();
+    const {message} = response;
+    expect(message).toBe('success');
   });
 });
