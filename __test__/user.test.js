@@ -28,7 +28,7 @@ describe('User endpoint', () => {
     const {message} = response;
     expect(message).toBe('success');
   });
-  it('should get subuseres without error', async () => {
+  it('should get sub users without error', async () => {
     const result = await User.getSubusers(client);
     const response = await result.json();
     const {message} = response;
@@ -94,7 +94,7 @@ describe('User endpoint', () => {
     const {message} = response;
     expect(message).toBe('success');
   });
-  it('should throw error when required fields not provided for postForm', async () => {
+  it('should throw error when form is not valid', async () => {
     const form = {
       questions: [
         {
