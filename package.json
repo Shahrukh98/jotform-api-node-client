@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "JotForm API Node.js client",
   "main": "index.js",
+  "author": "justaplant",
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
@@ -15,7 +16,7 @@
   },
   "dependencies": {
     "node-fetch": "^2.6.1",
-    "query-string": "^7.0.1"
+    "qs": "^6.10.1"
   },
   "jest": {
     "testTimeout": 25000
