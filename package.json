@@ -4,15 +4,19 @@
   "description": "JotForm API Node.js client",
   "main": "index.js",
   "author": "justaplant",
+  "private": true,
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "webpack"
   },
   "devDependencies": {
     "eslint": "^7.31.0",
     "eslint-config-google": "^0.14.0",
-    "jest": "^27.0.6"
+    "jest": "^27.0.6",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
   },
   "dependencies": {
     "node-fetch": "^2.6.1",
