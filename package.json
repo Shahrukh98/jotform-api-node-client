@@ -1,22 +1,27 @@
 {
-  "name": "jotform",
-  "version": "1.0.0",
+  "name": "jotform-api-nodejs-client",
+  "version": "1.0.3",
   "description": "JotForm API Node.js client",
-  "main": "index.js",
   "author": "justaplant",
-  "private": true,
+  "private": false,
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "package.json"
+  ],
+  "publishConfig": {
+    "public": true
+  },
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
-    "start": "node index.js",
-    "build": "webpack"
+    "build": "webpack",
+    "start": "node index.js"
   },
   "devDependencies": {
     "eslint": "^7.31.0",
     "eslint-config-google": "^0.14.0",
-    "jest": "^27.0.6",
-    "webpack": "^5.51.1",
-    "webpack-cli": "^4.8.0"
+    "jest": "^27.0.6"
   },
   "dependencies": {
     "node-fetch": "^2.6.1",
