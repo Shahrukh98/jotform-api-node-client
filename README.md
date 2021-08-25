@@ -1,6 +1,6 @@
 # JotForm Node Client
 
-##Install
+## Install
 
 `npm i @justaplant/pwettybuttons` 
 
@@ -8,7 +8,7 @@ or
 
 `yarn add jotform-api-nodejs-client`
 
-##Example
+## Example
 ```
 const JF = require('jotform-api-nodejs-client');
 const API_KEY = 'your_api_key';
