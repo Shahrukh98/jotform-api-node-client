@@ -3,10 +3,11 @@
 const Client = require('./../lib/client');
 const Submission = require('./../lib/submission/submission');
 
+const BASE_PATH = 'https://api.jotform.com/'
 const API_KEY = '13721ff14436d11b3165c206ce55d1d9';
 
 describe('Submission endpoint', () => {
-  const client = new Client(API_KEY);
+  const client = new Client(BASE_PATH,API_KEY);
   const submissionID = '5043241216116113405';
   it('should get submission without error', async () => {
     const result = await Submission.getSubmission(client, submissionID);

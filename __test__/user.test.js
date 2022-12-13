@@ -3,12 +3,13 @@
 const Client = require('./../lib/client');
 const User = require('./../lib/user/user');
 
+const BASE_PATH = 'https://api.jotform.com/'
 const API_KEY = '13721ff14436d11b3165c206ce55d1d9';
 
 // TODO: Look for a better way if not wrap it up with try catch block
 
 describe('User endpoint', () => {
-  const client = new Client(API_KEY);
+  const client = new Client(BASE_PATH,API_KEY);
   it('should get user without error', async () => {
     const result = await User.getUser(client);
     const response = await result.json();
